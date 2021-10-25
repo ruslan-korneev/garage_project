@@ -1,0 +1,6 @@
+.env
+venv
+__pycache__
+*.key
+*.log
+postgres_data
