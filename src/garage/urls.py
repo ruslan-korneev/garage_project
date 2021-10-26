@@ -19,7 +19,6 @@ from apps.metrics import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', include('django_prometheus.urls')),
     path('', include('apps.pokemons.urls')),
-    # path('metrics/', views.metric_view),
+    path('chat/', include('apps.chat.urls')),
 ]

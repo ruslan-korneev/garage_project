@@ -43,10 +43,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'channels',
     'django_prometheus',
 
     'apps.metrics',
     'apps.pokemons',
+    'apps.chat',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +145,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # PROMETHEUS
 PROMETHEUS_EXPORT_MIGRATIONS = False
+
+# ASGI
+ASGI_APPLICATION = "garage.asgi.application"
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('redis', 6379)],
+        },
+    },
+}

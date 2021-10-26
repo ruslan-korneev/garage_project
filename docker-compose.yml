@@ -30,6 +30,12 @@ services:
     image: grafana/grafana:6.5.2
     ports:
       - 3060:3000
+  redis:  
+    image: redis
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - "6379"
 
 volumes:
   prometheus-data:
