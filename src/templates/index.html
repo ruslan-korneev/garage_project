@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+Metrics:
+{{metrics}}
+{% for metric in metrics %}
+    {% for sample in metric.sample %}
+        {{sample.name}}: {{sample.value}}<br>
+    {% endfor %}
+{% endfor %}
+</body>
+</html>
